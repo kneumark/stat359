@@ -1,0 +1,31 @@
+Limitations and Design Decisions
+================================
+
+Scope
+-----
+This study initially explored additional prompt dimensions (authority ladder and tone ladder) on top of numeric perturbations.
+
+Observed Limitation
+-------------------
+The authority/tone prompt variants produced degenerate generations (e.g., `Final Result : ERROR` or empty final result), leading to zero numeric parseability in verification.
+
+Verification Evidence
+---------------------
+- Verification run summary: student/final_project/adversarial_results/verification_small/adversarial_numeric_summary_20260307_151442.json
+- Result: parse success was 0.00% for all tested authority/tone combinations.
+
+Compact Table
+-------------
+| Experiment variant                    | Parse success | Decision |
+|--------------------------------------|---------------|----------|
+| Numeric + authority/tone variants    | 0.00%         | Rejected |
+| Numeric-only minimal Step 0 template | Restored (>0) | Accepted |
+
+Final Causal Intervention Used
+------------------------------
+Model-facing adversarial prompt is restricted to:
+
+Evaluate: <expression> <think>
+Step 0: Claimed Result = <n>
+
+No additional authority text, tone text, tags, anchor lines, or re-evaluate instructions are included in the final causal pipeline.

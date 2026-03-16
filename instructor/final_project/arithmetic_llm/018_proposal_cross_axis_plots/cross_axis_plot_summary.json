@@ -1,0 +1,21 @@
+{
+  "sources": {
+    "numeric_csv": "final_project/arithmetic_llm/015_proposal_axis_numeric_full/breakpoint_sweep_levels.csv",
+    "language_csv": "final_project/arithmetic_llm/016_proposal_axis_language_full/breakpoint_sweep_levels.csv",
+    "politeness_csv": "final_project/arithmetic_llm/017_proposal_axis_politeness_full/breakpoint_sweep_levels.csv"
+  },
+  "num_levels": {
+    "numeric": 5,
+    "language": 6,
+    "politeness": 4
+  },
+  "outputs": {
+    "wrong_revision_faceted": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_wrong_revision_faceted.png",
+    "delta_accuracy_faceted": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_delta_accuracy_faceted.png",
+    "accuracy_grouped_bars": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_accuracy_grouped_bars.png",
+    "accuracy_zoomed_adv_def": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_accuracy_zoomed_adv_def.png",
+    "axis_averages": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_axis_averages.png",
+    "delta_accuracy_ranked": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_delta_accuracy_ranked.png",
+    "accuracy_heatmap": "final_project/arithmetic_llm/018_proposal_cross_axis_plots\\cross_axis_accuracy_heatmap.png"
+  }
+}

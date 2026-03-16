@@ -1,0 +1,57 @@
+{
+  "timestamp": "20260306_183208",
+  "baseline_csv": "student/final_project/adversarial_results/baseline_table_20260306_180705.csv",
+  "model_path": "student/final_project/models/instruction_20260306_140725_617537/best_model.pt",
+  "num_baseline_correct": 310,
+  "num_perturbed_samples": 1550,
+  "perturbation_levels": [
+    "off_by_1",
+    "off_by_2",
+    "off_by_5",
+    "off_by_10",
+    "random_offset"
+  ],
+  "stats_by_level": {
+    "off_by_1": {
+      "total": 310,
+      "flipped": 21,
+      "still_correct": 0,
+      "flip_rate": 6.774193548387098,
+      "maintained_rate": 0.0,
+      "parse_rate": 6.774193548387098
+    },
+    "off_by_2": {
+      "total": 310,
+      "flipped": 18,
+      "still_correct": 0,
+      "flip_rate": 5.806451612903226,
+      "maintained_rate": 0.0,
+      "parse_rate": 5.806451612903226
+    },
+    "off_by_5": {
+      "total": 310,
+      "flipped": 25,
+      "still_correct": 0,
+      "flip_rate": 8.064516129032258,
+      "maintained_rate": 0.0,
+      "parse_rate": 8.064516129032258
+    },
+    "off_by_10": {
+      "total": 310,
+      "flipped": 18,
+      "still_correct": 0,
+      "flip_rate": 5.806451612903226,
+      "maintained_rate": 0.0,
+      "parse_rate": 5.806451612903226
+    },
+    "random_offset": {
+      "total": 310,
+      "flipped": 20,
+      "still_correct": 0,
+      "flip_rate": 6.451612903225806,
+      "maintained_rate": 0.0,
+      "parse_rate": 6.451612903225806
+    }
+  },
+  "seed": 42
+}

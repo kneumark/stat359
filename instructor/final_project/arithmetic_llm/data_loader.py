@@ -1,9 +1,11 @@
 """Data loading utilities for arithmetic LLM training."""
 
 import json
+import random
+from collections import defaultdict
 import torch
 from torch.utils.data import Dataset, DataLoader
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from .arithmetic_tokenizer import (
     ArithmeticBPETokenizer
 )
@@ -38,6 +40,7 @@ class ArithmeticDataset(Dataset):
         self.mode = mode
         self.entries = []
         self.prompt_lengths = []  # Store prompt lengths for instruction mode
+        self.split_keys = []
         
         # Load corpus
         self._load_corpus()
@@ -117,6 +120,7 @@ class ArithmeticDataset(Dataset):
                     # Foundational: raw text per line
                     self.entries.append(line)
                     self.prompt_lengths.append(0)
+                    self.split_keys.append(None)
                     continue
 
                 try:
@@ -142,10 +146,31 @@ class ArithmeticDataset(Dataset):
 
                     self.entries.append(text)
                     self.prompt_lengths.append(prompt_length)
+                    self.split_keys.append(self._extract_split_key(entry))
 
                 except json.JSONDecodeError:
                     # Skip malformed JSON lines in instruction mode
                     continue
+
+    @staticmethod
+    def _extract_split_key(entry: dict) -> str:
+        """Extract deterministic grouping key for leakage-safe splitting.
+
+        Prefers explicit `expression`; falls back to parsing from `problem`.
+        """
+        expression = entry.get("expression")
+        if isinstance(expression, str) and expression.strip():
+            return expression.strip()
+
+        problem = entry.get("problem")
+        if isinstance(problem, str):
+            prefix = "Evaluate:"
+            if problem.startswith(prefix):
+                return problem[len(prefix):].strip()
+            return problem.strip()
+
+        # Final fallback: keep malformed records grouped by stable marker.
+        return "__MISSING_EXPRESSION__"
     
     def __len__(self) -> int:
         """Return number of entries in dataset."""
@@ -257,7 +282,9 @@ def create_dataloaders(
     train_split: float = 0.9,
     shuffle: bool = True,
     num_workers: int = 2,  # Changed from 0 to 2 for parallel loading
-    mode: str = "foundational"
+    mode: str = "foundational",
+    split_strategy: str = "random",
+    split_seed: int = 42,
 ) -> Tuple[DataLoader, DataLoader]:
     """Create train and validation dataloaders.
     
@@ -270,6 +297,8 @@ def create_dataloaders(
         shuffle: Whether to shuffle training data
         num_workers: Number of worker processes for data loading
         mode: Training mode - "foundational" or "instruction"
+        split_strategy: "random" (sample-level) or "group_by_expression" for leakage-safe splitting
+        split_seed: Random seed for deterministic splitting
         
     Returns:
         Tuple of (train_dataloader, val_dataloader)
@@ -296,19 +325,64 @@ def create_dataloaders(
         train_dataset = full_dataset
         val_dataset = full_dataset
     else:
-        # Ensure at least 1 sample in validation set
-        train_size = max(1, int(dataset_size * train_split))
-        val_size = max(1, dataset_size - train_size)
-        
-        # Adjust train_size if needed to ensure both sets have at least 1 sample
-        if train_size + val_size > dataset_size:
-            train_size = dataset_size - 1
-            val_size = 1
-        
-        train_dataset, val_dataset = torch.utils.data.random_split(
-            full_dataset,
-            [train_size, val_size]
-        )
+        if split_strategy == "group_by_expression":
+            if mode != "instruction":
+                raise ValueError(
+                    "split_strategy='group_by_expression' is only supported in instruction mode"
+                )
+
+            groups = defaultdict(list)
+            for index, key in enumerate(full_dataset.split_keys):
+                groups[key].append(index)
+
+            group_keys = list(groups.keys())
+            if len(group_keys) < 2:
+                raise ValueError(
+                    "Leakage-safe split requires at least 2 distinct expression groups"
+                )
+
+            rng = random.Random(split_seed)
+            rng.shuffle(group_keys)
+
+            target_train_size = max(1, int(dataset_size * train_split))
+            train_indices: List[int] = []
+            val_indices: List[int] = []
+
+            for key in group_keys:
+                group_indices = groups[key]
+                if len(train_indices) < target_train_size:
+                    train_indices.extend(group_indices)
+                else:
+                    val_indices.extend(group_indices)
+
+            if len(val_indices) == 0:
+                last_key = group_keys[-1]
+                move_indices = groups[last_key]
+                train_indices = [index for index in train_indices if index not in set(move_indices)]
+                val_indices.extend(move_indices)
+                if len(train_indices) == 0:
+                    raise ValueError(
+                        "Unable to create non-empty train and validation splits with grouped strategy"
+                    )
+
+            train_dataset = torch.utils.data.Subset(full_dataset, train_indices)
+            val_dataset = torch.utils.data.Subset(full_dataset, val_indices)
+        else:
+            # Ensure at least 1 sample in validation set
+            train_size = max(1, int(dataset_size * train_split))
+            val_size = max(1, dataset_size - train_size)
+
+            # Adjust train_size if needed to ensure both sets have at least 1 sample
+            if train_size + val_size > dataset_size:
+                train_size = dataset_size - 1
+                val_size = 1
+
+            generator = torch.Generator().manual_seed(split_seed)
+            train_dataset, val_dataset = torch.utils.data.random_split(
+                full_dataset,
+                [train_size, val_size],
+                generator=generator
+            )
     
     # Get pad token ID
     pad_token_id = tokenizer.token2id.get('<pad>', 0)

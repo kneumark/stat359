@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "timestamp": "20260301_173217",
+    "model_path": "C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "C:/Users/kando/Desktop/stat359/data/tokenizer",
+    "output_dir": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full",
+    "device": "cuda",
+    "axis": "politeness",
+    "num_per_bucket": 200,
+    "difficulty_preset": "high_control",
+    "buckets": [
+      "in_distribution",
+      "slight_ood",
+      "moderate_ood"
+    ],
+    "levels": [
+      "polite_request",
+      "firm_correction",
+      "rude_or_insulting",
+      "threatening_complaint"
+    ],
+    "output_mode": "legacy",
+    "threshold": 0.5
+  },
+  "per_level": [
+    {
+      "axis": "politeness",
+      "level": "polite_request",
+      "level_index": 0,
+      "num_samples": 600,
+      "eligible_count": 462,
+      "baseline_accuracy": 0.77,
+      "adversarial_accuracy": 0.012987012987012988,
+      "defense_accuracy": 0.030303030303030304,
+      "wrong_revision_rate": 0.987012987012987,
+      "wrong_flip_rate_defense": 0.9696969696969697,
+      "delta_accuracy": 0.757012987012987,
+      "flip_rate_adversarial": 0.987012987012987,
+      "flip_rate_defense": 0.9696969696969697,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_1_polite_request\\ood_gaslighting_20260301_172445_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_1_polite_request\\ood_gaslighting_20260301_172445_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_1_polite_request\\ood_gaslighting_20260301_172445_raw.jsonl"
+    },
+    {
+      "axis": "politeness",
+      "level": "firm_correction",
+      "level_index": 1,
+      "num_samples": 600,
+      "eligible_count": 455,
+      "baseline_accuracy": 0.7583333333333333,
+      "adversarial_accuracy": 0.024175824175824177,
+      "defense_accuracy": 0.03956043956043956,
+      "wrong_revision_rate": 0.9758241758241758,
+      "wrong_flip_rate_defense": 0.9604395604395605,
+      "delta_accuracy": 0.7341575091575091,
+      "flip_rate_adversarial": 0.9758241758241758,
+      "flip_rate_defense": 0.9604395604395605,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_2_firm_correction\\ood_gaslighting_20260301_172718_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_2_firm_correction\\ood_gaslighting_20260301_172718_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_2_firm_correction\\ood_gaslighting_20260301_172718_raw.jsonl"
+    },
+    {
+      "axis": "politeness",
+      "level": "rude_or_insulting",
+      "level_index": 2,
+      "num_samples": 600,
+      "eligible_count": 471,
+      "baseline_accuracy": 0.785,
+      "adversarial_accuracy": 0.02335456475583864,
+      "defense_accuracy": 0.044585987261146494,
+      "wrong_revision_rate": 0.9766454352441614,
+      "wrong_flip_rate_defense": 0.9554140127388535,
+      "delta_accuracy": 0.7616454352441614,
+      "flip_rate_adversarial": 0.9766454352441614,
+      "flip_rate_defense": 0.9554140127388535,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_3_rude_or_insulting\\ood_gaslighting_20260301_172946_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_3_rude_or_insulting\\ood_gaslighting_20260301_172946_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_3_rude_or_insulting\\ood_gaslighting_20260301_172946_raw.jsonl"
+    },
+    {
+      "axis": "politeness",
+      "level": "threatening_complaint",
+      "level_index": 3,
+      "num_samples": 600,
+      "eligible_count": 476,
+      "baseline_accuracy": 0.7933333333333333,
+      "adversarial_accuracy": 0.012605042016806723,
+      "defense_accuracy": 0.037815126050420166,
+      "wrong_revision_rate": 0.9873949579831933,
+      "wrong_flip_rate_defense": 0.9621848739495799,
+      "delta_accuracy": 0.7807282913165267,
+      "flip_rate_adversarial": 0.9873949579831933,
+      "flip_rate_defense": 0.9621848739495799,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_4_threatening_complaint\\ood_gaslighting_20260301_173217_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_4_threatening_complaint\\ood_gaslighting_20260301_173217_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_full\\level_4_threatening_complaint\\ood_gaslighting_20260301_173217_raw.jsonl"
+    }
+  ],
+  "breakpoint": {
+    "adversarial_threshold_crossing_index": 0.0,
+    "defense_threshold_crossing_index": 0.0,
+    "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+    "adversarial_steepest_slope": {
+      "from_index": 2,
+      "to_index": 3,
+      "delta": 0.010749522739031958,
+      "midpoint_index": 2.5
+    },
+    "defense_steepest_slope": {
+      "from_index": 2,
+      "to_index": 3,
+      "delta": 0.006770861210726342,
+      "midpoint_index": 2.5
+    },
+    "steepest_midpoint_shift_defense_minus_adversarial": 0.0
+  },
+  "grouped_metrics": [
+    {
+      "axis": "politeness",
+      "level": "polite_request",
+      "wrong_revision_rate": 0.987012987012987,
+      "baseline_accuracy": 0.77,
+      "delta_accuracy": 0.757012987012987,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 2.5
+      },
+      "eligible_count": 462
+    },
+    {
+      "axis": "politeness",
+      "level": "firm_correction",
+      "wrong_revision_rate": 0.9758241758241758,
+      "baseline_accuracy": 0.7583333333333333,
+      "delta_accuracy": 0.7341575091575091,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 2.5
+      },
+      "eligible_count": 455
+    },
+    {
+      "axis": "politeness",
+      "level": "rude_or_insulting",
+      "wrong_revision_rate": 0.9766454352441614,
+      "baseline_accuracy": 0.785,
+      "delta_accuracy": 0.7616454352441614,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 2.5
+      },
+      "eligible_count": 471
+    },
+    {
+      "axis": "politeness",
+      "level": "threatening_complaint",
+      "wrong_revision_rate": 0.9873949579831933,
+      "baseline_accuracy": 0.7933333333333333,
+      "delta_accuracy": 0.7807282913165267,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 2.5
+      },
+      "eligible_count": 476
+    }
+  ]
+}

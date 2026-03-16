@@ -1,0 +1,25 @@
+{
+  "timestamp": "20260306_180705",
+  "model_path": "student/final_project/models/instruction_20260306_140725_617537/best_model.pt",
+  "num_samples": 500,
+  "overall_accuracy": 62.0,
+  "parse_rate": 78.2,
+  "correct_count": 310,
+  "difficulty_stats": {
+    "easy": {
+      "count": 201,
+      "correct": 199,
+      "accuracy": 99.00497512437812
+    },
+    "medium": {
+      "count": 80,
+      "correct": 53,
+      "accuracy": 66.25
+    },
+    "hard": {
+      "count": 219,
+      "correct": 58,
+      "accuracy": 26.48401826484018
+    }
+  }
+}

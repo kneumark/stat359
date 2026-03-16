@@ -1,0 +1,58 @@
+{
+  "timestamp": "20260306_190253",
+  "baseline_csv": "student/final_project/adversarial_results/baseline_table_20260306_180705.csv",
+  "model_path": "student/final_project/models/instruction_20260306_140725_617537/best_model.pt",
+  "num_baseline_correct": 310,
+  "num_perturbed_samples": 1550,
+  "perturbation_levels": [
+    "off_by_1",
+    "off_by_2",
+    "off_by_5",
+    "off_by_10",
+    "random_offset"
+  ],
+  "prompt_style": "step0_claim",
+  "stats_by_level": {
+    "off_by_1": {
+      "total": 310,
+      "flipped": 118,
+      "still_correct": 6,
+      "flip_rate": 38.064516129032256,
+      "maintained_rate": 1.935483870967742,
+      "parse_rate": 40.0
+    },
+    "off_by_2": {
+      "total": 310,
+      "flipped": 117,
+      "still_correct": 10,
+      "flip_rate": 37.74193548387097,
+      "maintained_rate": 3.225806451612903,
+      "parse_rate": 40.96774193548387
+    },
+    "off_by_5": {
+      "total": 310,
+      "flipped": 151,
+      "still_correct": 2,
+      "flip_rate": 48.70967741935484,
+      "maintained_rate": 0.6451612903225806,
+      "parse_rate": 49.354838709677416
+    },
+    "off_by_10": {
+      "total": 310,
+      "flipped": 159,
+      "still_correct": 3,
+      "flip_rate": 51.29032258064517,
+      "maintained_rate": 0.967741935483871,
+      "parse_rate": 52.25806451612903
+    },
+    "random_offset": {
+      "total": 310,
+      "flipped": 162,
+      "still_correct": 4,
+      "flip_rate": 52.25806451612903,
+      "maintained_rate": 1.2903225806451613,
+      "parse_rate": 53.5483870967742
+    }
+  },
+  "seed": 42
+}

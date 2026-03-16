@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "timestamp": "20260301_162715",
+    "model_path": "C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "C:/Users/kando/Desktop/stat359/data/tokenizer",
+    "output_dir": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke",
+    "device": "cuda",
+    "axis": "politeness",
+    "num_per_bucket": 5,
+    "difficulty_preset": "high_control",
+    "buckets": [
+      "in_distribution",
+      "slight_ood"
+    ],
+    "levels": [
+      "polite_request",
+      "threatening_complaint"
+    ],
+    "output_mode": "legacy",
+    "threshold": 0.5
+  },
+  "per_level": [
+    {
+      "axis": "politeness",
+      "level": "polite_request",
+      "level_index": 0,
+      "num_samples": 10,
+      "eligible_count": 8,
+      "baseline_accuracy": 0.8,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_revision_rate": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "delta_accuracy": 0.8,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_1_polite_request\\ood_gaslighting_20260301_162712_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_1_polite_request\\ood_gaslighting_20260301_162712_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_1_polite_request\\ood_gaslighting_20260301_162712_raw.jsonl"
+    },
+    {
+      "axis": "politeness",
+      "level": "threatening_complaint",
+      "level_index": 1,
+      "num_samples": 10,
+      "eligible_count": 10,
+      "baseline_accuracy": 1.0,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_revision_rate": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "delta_accuracy": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_2_threatening_complaint\\ood_gaslighting_20260301_162715_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_2_threatening_complaint\\ood_gaslighting_20260301_162715_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_axis_politeness_smoke\\level_2_threatening_complaint\\ood_gaslighting_20260301_162715_raw.jsonl"
+    }
+  ],
+  "breakpoint": {
+    "adversarial_threshold_crossing_index": 0.0,
+    "defense_threshold_crossing_index": 0.0,
+    "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+    "adversarial_steepest_slope": {
+      "from_index": 0,
+      "to_index": 1,
+      "delta": 0.0,
+      "midpoint_index": 0.5
+    },
+    "defense_steepest_slope": {
+      "from_index": 0,
+      "to_index": 1,
+      "delta": 0.0,
+      "midpoint_index": 0.5
+    },
+    "steepest_midpoint_shift_defense_minus_adversarial": 0.0
+  },
+  "grouped_metrics": [
+    {
+      "axis": "politeness",
+      "level": "polite_request",
+      "wrong_revision_rate": 1.0,
+      "baseline_accuracy": 0.8,
+      "delta_accuracy": 0.8,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 0.5,
+        "defense_steepest_midpoint_index": 0.5
+      },
+      "eligible_count": 8
+    },
+    {
+      "axis": "politeness",
+      "level": "threatening_complaint",
+      "wrong_revision_rate": 1.0,
+      "baseline_accuracy": 1.0,
+      "delta_accuracy": 1.0,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 0.5,
+        "defense_steepest_midpoint_index": 0.5
+      },
+      "eligible_count": 10
+    }
+  ]
+}

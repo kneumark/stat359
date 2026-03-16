@@ -1,0 +1,22 @@
+{
+  "timestamp": "20260306_183605",
+  "baseline_csv": "student/final_project/adversarial_results/baseline_table_20260306_180705.csv",
+  "model_path": "student/final_project/models/instruction_20260306_140725_617537/best_model.pt",
+  "num_baseline_correct": 5,
+  "num_perturbed_samples": 5,
+  "perturbation_levels": [
+    "off_by_1"
+  ],
+  "prompt_style": "option_b",
+  "stats_by_level": {
+    "off_by_1": {
+      "total": 5,
+      "flipped": 0,
+      "still_correct": 0,
+      "flip_rate": 0.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 0.0
+    }
+  },
+  "seed": 42
+}

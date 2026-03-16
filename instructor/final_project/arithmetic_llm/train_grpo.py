@@ -4,7 +4,7 @@ from typing import Any, Dict, Iterator, List, Optional, Tuple
 import os
 
 import math
-from datetime import datetime
+from .output_naming import create_numbered_output_dir
 
 from .arithmetic_tokenizer import ArithmeticBPETokenizer
 from .data_loader import ArithmeticDataset
@@ -75,9 +75,7 @@ def train_grpo_model(
     tokenizer = ArithmeticBPETokenizer()
     tokenizer.load(tokenizer_path)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-    output_dir = os.path.join(output_dir, f"grpo_{timestamp}")
-    os.makedirs(output_dir, exist_ok=True)
+    output_dir = create_numbered_output_dir(output_dir, "grpo")
 
     print(f"GRPO output directory: {output_dir}")
 

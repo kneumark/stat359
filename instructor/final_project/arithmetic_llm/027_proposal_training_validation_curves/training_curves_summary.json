@@ -1,0 +1,9 @@
+{
+  "training_log": "final_project/arithmetic_llm/019_proposal_before_after/002_before_after/finetune_models/001_instruction/training_log.json",
+  "num_epochs": 1,
+  "plots": {
+    "loss": "final_project/arithmetic_llm/027_proposal_training_validation_curves\\training_validation_loss_curve.png",
+    "perplexity": "final_project/arithmetic_llm/027_proposal_training_validation_curves\\training_validation_perplexity_curve.png",
+    "learning_rate": "final_project/arithmetic_llm/027_proposal_training_validation_curves\\learning_rate_curve.png"
+  }
+}

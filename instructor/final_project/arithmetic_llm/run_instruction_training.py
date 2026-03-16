@@ -104,6 +104,48 @@ def main():
         type=str,
         help="Path to model configuration JSON file (optional, will use foundational config if not provided)"
     )
+
+    parser.add_argument(
+        "--use-wandb",
+        action="store_true",
+        help="Enable Weights & Biases logging"
+    )
+
+    parser.add_argument(
+        "--wandb-project",
+        type=str,
+        default="stat359-arithmetic-llm",
+        help="W&B project name (default: stat359-arithmetic-llm)"
+    )
+
+    parser.add_argument(
+        "--wandb-entity",
+        type=str,
+        default=None,
+        help="W&B entity/team (optional)"
+    )
+
+    parser.add_argument(
+        "--wandb-run-name",
+        type=str,
+        default=None,
+        help="W&B run name (optional)"
+    )
+
+    parser.add_argument(
+        "--wandb-tags",
+        type=str,
+        default="",
+        help="Comma-separated W&B tags (optional)"
+    )
+
+    parser.add_argument(
+        "--wandb-mode",
+        type=str,
+        default="online",
+        choices=["online", "offline", "disabled"],
+        help="W&B mode (default: online)"
+    )
     
     args = parser.parse_args()
     
@@ -166,7 +208,13 @@ def main():
             foundational_checkpoint=args.foundational_checkpoint,
             output_dir=args.output_dir,
             config=config,
-            model_config=model_config
+            model_config=model_config,
+            wandb_enabled=args.use_wandb,
+            wandb_project=args.wandb_project,
+            wandb_entity=args.wandb_entity,
+            wandb_run_name=args.wandb_run_name,
+            wandb_tags=[tag.strip() for tag in args.wandb_tags.split(",") if tag.strip()],
+            wandb_mode=args.wandb_mode,
         )
         
         print("\n" + "=" * 60)

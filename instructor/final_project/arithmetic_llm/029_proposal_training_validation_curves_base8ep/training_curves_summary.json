@@ -1,0 +1,13 @@
+{
+  "training_log": "final_project/arithmetic_llm/proposal_training_curves/006_instruction/training_log.json",
+  "training_step_log": "final_project/arithmetic_llm/proposal_training_curves/006_instruction/training_step_log.json",
+  "x_axis": "epoch",
+  "num_epochs": 8,
+  "num_train_points": 9000,
+  "num_val_points": 8,
+  "plots": {
+    "loss": "final_project/arithmetic_llm/029_proposal_training_validation_curves_base8ep\\training_validation_loss_curve.png",
+    "perplexity": "final_project/arithmetic_llm/029_proposal_training_validation_curves_base8ep\\training_validation_perplexity_curve.png",
+    "learning_rate": "final_project/arithmetic_llm/029_proposal_training_validation_curves_base8ep\\learning_rate_curve.png"
+  }
+}

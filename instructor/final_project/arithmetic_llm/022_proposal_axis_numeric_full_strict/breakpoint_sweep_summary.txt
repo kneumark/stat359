@@ -1,0 +1,22 @@
+========================================================================
+BREAKPOINT SWEEP SUMMARY
+========================================================================
+
+Active axis: numeric
+Levels (in order): off_by_1, off_by_2, off_by_5, off_by_10, random_offset
+Threshold: 0.5
+
+Per-level grouped metrics
+- off_by_1: wrong_revision_rate=0.6190, baseline_accuracy=0.7700, delta_accuracy=0.3890, eligible=462
+- off_by_2: wrong_revision_rate=0.6110, baseline_accuracy=0.7583, delta_accuracy=0.3693, eligible=455
+- off_by_5: wrong_revision_rate=0.6173, baseline_accuracy=0.7883, delta_accuracy=0.4057, eligible=473
+- off_by_10: wrong_revision_rate=0.6457, baseline_accuracy=0.7950, delta_accuracy=0.4407, eligible=477
+- random_offset: wrong_revision_rate=0.6505, baseline_accuracy=0.7917, delta_accuracy=0.4422, eligible=475
+
+Breakpoint estimate
+- adversarial threshold crossing index: 0.0
+- defense threshold crossing index: 0.0
+- threshold crossing shift (defense - adversarial): 0.0
+- adversarial steepest slope: {'from_index': 2, 'to_index': 3, 'delta': 0.028366153859791465, 'midpoint_index': 2.5}
+- defense steepest slope: {'from_index': 3, 'to_index': 4, 'delta': 0.02365662584133288, 'midpoint_index': 3.5}
+- steepest midpoint shift (defense - adversarial): 1.0

@@ -1,0 +1,40 @@
+{
+  "timestamp": "20260307_143529",
+  "baseline_csv": "student/final_project/adversarial_results/baseline_table_20260306_180705.csv",
+  "model_path": "student/final_project/models/instruction_20260306_140725_617537/best_model.pt",
+  "num_baseline_correct": 1,
+  "num_perturbed_samples": 1,
+  "perturbation_levels": [
+    "off_by_1"
+  ],
+  "authority_levels": [
+    "user_guess"
+  ],
+  "tone_levels": [
+    "neutral"
+  ],
+  "stats_by_level": {
+    "off_by_1": {
+      "total": 1,
+      "flipped": 0,
+      "still_correct": 0,
+      "flip_rate": 0.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 0.0
+    }
+  },
+  "stats_by_combo": {
+    "off_by_1__user_guess__neutral": {
+      "perturbation_level": "off_by_1",
+      "authority_level": "user_guess",
+      "tone_level": "neutral",
+      "total": 1,
+      "flipped": 0,
+      "still_correct": 0,
+      "flip_rate": 0.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 0.0
+    }
+  },
+  "seed": 42
+}

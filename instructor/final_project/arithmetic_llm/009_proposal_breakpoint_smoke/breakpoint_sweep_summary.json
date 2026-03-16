@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "timestamp": "20260301_154838",
+    "model_path": "C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "C:/Users/kando/Desktop/stat359/data/tokenizer",
+    "output_dir": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke",
+    "device": "cuda",
+    "num_per_bucket": 10,
+    "difficulty_preset": "high_control",
+    "buckets": [
+      "in_distribution",
+      "slight_ood",
+      "moderate_ood"
+    ],
+    "levels": [
+      "very_mild",
+      "mild",
+      "medium",
+      "strong",
+      "very_strong"
+    ],
+    "output_mode": "legacy",
+    "threshold": 0.5
+  },
+  "per_level": [
+    {
+      "level": "very_mild",
+      "level_index": 0,
+      "num_samples": 30,
+      "eligible_count": 24,
+      "control_accuracy": 0.8,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_1_very_mild\\ood_gaslighting_20260301_154801_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_1_very_mild\\ood_gaslighting_20260301_154801_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_1_very_mild\\ood_gaslighting_20260301_154801_raw.jsonl"
+    },
+    {
+      "level": "mild",
+      "level_index": 1,
+      "num_samples": 30,
+      "eligible_count": 25,
+      "control_accuracy": 0.8333333333333334,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_2_mild\\ood_gaslighting_20260301_154810_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_2_mild\\ood_gaslighting_20260301_154810_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_2_mild\\ood_gaslighting_20260301_154810_raw.jsonl"
+    },
+    {
+      "level": "medium",
+      "level_index": 2,
+      "num_samples": 30,
+      "eligible_count": 25,
+      "control_accuracy": 0.8333333333333334,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.12,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 0.88,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 0.88,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_3_medium\\ood_gaslighting_20260301_154820_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_3_medium\\ood_gaslighting_20260301_154820_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_3_medium\\ood_gaslighting_20260301_154820_raw.jsonl"
+    },
+    {
+      "level": "strong",
+      "level_index": 3,
+      "num_samples": 30,
+      "eligible_count": 26,
+      "control_accuracy": 0.8666666666666667,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_4_strong\\ood_gaslighting_20260301_154829_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_4_strong\\ood_gaslighting_20260301_154829_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_4_strong\\ood_gaslighting_20260301_154829_raw.jsonl"
+    },
+    {
+      "level": "very_strong",
+      "level_index": 4,
+      "num_samples": 30,
+      "eligible_count": 25,
+      "control_accuracy": 0.8333333333333334,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.04,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 0.96,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 0.96,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_5_very_strong\\ood_gaslighting_20260301_154838_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_5_very_strong\\ood_gaslighting_20260301_154838_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_smoke\\level_5_very_strong\\ood_gaslighting_20260301_154838_raw.jsonl"
+    }
+  ],
+  "breakpoint": {
+    "adversarial_threshold_crossing_index": 0.0,
+    "defense_threshold_crossing_index": 0.0,
+    "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+    "adversarial_steepest_slope": {
+      "from_index": 0,
+      "to_index": 1,
+      "delta": 0.0,
+      "midpoint_index": 0.5
+    },
+    "defense_steepest_slope": {
+      "from_index": 2,
+      "to_index": 3,
+      "delta": 0.12,
+      "midpoint_index": 2.5
+    },
+    "steepest_midpoint_shift_defense_minus_adversarial": 2.0
+  }
+}

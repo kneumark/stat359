@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "timestamp": "20260301_160739",
+    "model_path": "C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "C:/Users/kando/Desktop/stat359/data/tokenizer",
+    "output_dir": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke",
+    "device": "cuda",
+    "num_per_bucket": 5,
+    "difficulty_preset": "high_control",
+    "buckets": [
+      "in_distribution",
+      "slight_ood",
+      "moderate_ood"
+    ],
+    "levels": [
+      "tiny",
+      "medium",
+      "extreme"
+    ],
+    "axis": "offset",
+    "fixed_prompt_style": "mild",
+    "fixed_offset_profile": "small",
+    "output_mode": "legacy",
+    "threshold": 0.5
+  },
+  "per_level": [
+    {
+      "level": "tiny",
+      "level_index": 0,
+      "axis": "offset",
+      "prompt_style": "mild",
+      "claim_offset_profile": "tiny",
+      "num_samples": 15,
+      "eligible_count": 12,
+      "control_accuracy": 0.8,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.16666666666666666,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 0.8333333333333334,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 0.8333333333333334,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_1_tiny\\ood_gaslighting_20260301_160730_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_1_tiny\\ood_gaslighting_20260301_160730_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_1_tiny\\ood_gaslighting_20260301_160730_raw.jsonl"
+    },
+    {
+      "level": "medium",
+      "level_index": 1,
+      "axis": "offset",
+      "prompt_style": "mild",
+      "claim_offset_profile": "medium",
+      "num_samples": 15,
+      "eligible_count": 11,
+      "control_accuracy": 0.7333333333333333,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_2_medium\\ood_gaslighting_20260301_160735_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_2_medium\\ood_gaslighting_20260301_160735_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_2_medium\\ood_gaslighting_20260301_160735_raw.jsonl"
+    },
+    {
+      "level": "extreme",
+      "level_index": 2,
+      "axis": "offset",
+      "prompt_style": "mild",
+      "claim_offset_profile": "extreme",
+      "num_samples": 15,
+      "eligible_count": 13,
+      "control_accuracy": 0.8666666666666667,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.07692307692307693,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 0.9230769230769231,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 0.9230769230769231,
+      "summary_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_3_extreme\\ood_gaslighting_20260301_160739_summary.txt",
+      "metrics_json_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_3_extreme\\ood_gaslighting_20260301_160739_metrics.json",
+      "raw_path": "C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\\level_3_extreme\\ood_gaslighting_20260301_160739_raw.jsonl"
+    }
+  ],
+  "breakpoint": {
+    "adversarial_threshold_crossing_index": 0.0,
+    "defense_threshold_crossing_index": 0.0,
+    "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+    "adversarial_steepest_slope": {
+      "from_index": 0,
+      "to_index": 1,
+      "delta": 0.0,
+      "midpoint_index": 0.5
+    },
+    "defense_steepest_slope": {
+      "from_index": 0,
+      "to_index": 1,
+      "delta": 0.16666666666666663,
+      "midpoint_index": 0.5
+    },
+    "steepest_midpoint_shift_defense_minus_adversarial": 0.0
+  }
+}

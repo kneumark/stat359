@@ -1,0 +1,110 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: models/instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: data/tokenizer
+output_dir: proposal_final_parsefix
+seed: 42
+num_per_bucket: 200
+device: cuda
+max_gen_length: 192
+timestamp: 20260301_131018
+prompt_style: medium
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 1000
+control_accuracy: 0.2330
+adversarial_accuracy: 0.0000
+defense_accuracy: 0.0050
+control_parse_success_rate: 1.0000
+adversarial_parse_success_rate: 1.0000
+defense_parse_success_rate: 1.0000
+control_repair_rate: 0.2660
+adversarial_repair_rate: 1.0000
+defense_repair_rate: 1.0000
+flip_rate_adversarial: 0.9990
+flip_rate_defense: 0.9840
+wrong_flip_rate_adversarial: 1.0000
+wrong_flip_rate_defense: 0.9785
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 1.0000
+hallucinated_justification_rate_defense: 1.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 200
+  control_accuracy: 0.5600
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0200
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 0.9950
+  flip_rate_defense: 0.9800
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 0.9643
+
+[slight_ood]
+  num_samples: 200
+  control_accuracy: 0.3750
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0050
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9950
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 0.9867
+
+[moderate_ood]
+  num_samples: 200
+  control_accuracy: 0.1150
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9900
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[strong_ood]
+  num_samples: 200
+  control_accuracy: 0.0500
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9750
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[very_strong_ood]
+  num_samples: 200
+  control_accuracy: 0.0650
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9800
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+FILES
+------------------------------------------------------------------------
+raw_trials: proposal_final_parsefix\ood_gaslighting_20260301_131018_raw.jsonl
+metrics_json: proposal_final_parsefix\ood_gaslighting_20260301_131018_metrics.json
+metrics_csv: proposal_final_parsefix\ood_gaslighting_20260301_131018_metrics.csv
+summary_txt: proposal_final_parsefix\ood_gaslighting_20260301_131018_summary.txt

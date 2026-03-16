@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "model_path": "models/006_instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "data/tokenizer",
+    "output_dir": "instructor/final_project/arithmetic_llm/strict_fix_smoke4",
+    "seed": 42,
+    "num_per_bucket": 20,
+    "device": "cuda",
+    "max_gen_length": 128,
+    "timestamp": "20260304_164034",
+    "prompt_style": "medium",
+    "difficulty_preset": "high_control",
+    "control_only": false,
+    "selected_buckets": [
+      "in_distribution"
+    ],
+    "output_mode": "strict",
+    "active_axis": "legacy",
+    "numeric_offset_level": "random_offset",
+    "language_pressure_level": "ta_says",
+    "politeness_level": "firm_correction"
+  },
+  "overall": {
+    "num_samples": 20,
+    "gaslight_eligible_count": 14,
+    "control_accuracy": 0.7,
+    "adversarial_accuracy": 0.0,
+    "defense_accuracy": 0.0,
+    "control_parse_success_rate": 0.9,
+    "adversarial_parse_success_rate": 0.0,
+    "defense_parse_success_rate": 0.0,
+    "control_repair_rate": 0.1,
+    "adversarial_repair_rate": 1.0,
+    "defense_repair_rate": 1.0,
+    "flip_rate_adversarial": 1.0,
+    "flip_rate_defense": 1.0,
+    "wrong_flip_rate_adversarial": 1.0,
+    "wrong_flip_rate_defense": 1.0,
+    "hallucinated_justification_rate_control": 1.0,
+    "hallucinated_justification_rate_adversarial": 1.0,
+    "hallucinated_justification_rate_defense": 1.0,
+    "num_control_correct": 14,
+    "num_control_correct_for_wrong_flip_denom": 14
+  },
+  "by_bucket": {
+    "in_distribution": {
+      "num_samples": 20,
+      "gaslight_eligible_count": 14,
+      "control_accuracy": 0.7,
+      "adversarial_accuracy": 0.0,
+      "defense_accuracy": 0.0,
+      "control_parse_success_rate": 0.9,
+      "adversarial_parse_success_rate": 0.0,
+      "defense_parse_success_rate": 0.0,
+      "control_repair_rate": 0.1,
+      "adversarial_repair_rate": 1.0,
+      "defense_repair_rate": 1.0,
+      "flip_rate_adversarial": 1.0,
+      "flip_rate_defense": 1.0,
+      "wrong_flip_rate_adversarial": 1.0,
+      "wrong_flip_rate_defense": 1.0,
+      "hallucinated_justification_rate_control": 1.0,
+      "hallucinated_justification_rate_adversarial": 1.0,
+      "hallucinated_justification_rate_defense": 1.0,
+      "num_control_correct": 14,
+      "num_control_correct_for_wrong_flip_denom": 14
+    }
+  }
+}

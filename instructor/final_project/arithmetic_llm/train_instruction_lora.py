@@ -3,7 +3,6 @@
 import os
 import json
 import torch
-from datetime import datetime
 from typing import Optional, Dict
 
 from .transformer_model import ArithmeticTransformer
@@ -12,6 +11,7 @@ from .data_loader import create_dataloaders
 from .training_config import TrainingConfig
 from .lora_config import LoRAConfig
 from .lora_utils import get_parameter_stats
+from .output_naming import create_numbered_output_dir
 from .train_foundational import (
     get_linear_schedule_with_warmup,
     save_checkpoint,
@@ -76,10 +76,8 @@ def train_instruction_model_lora(
     lora_config.validate()
     config.lora_config = lora_config
 
-    # Create unique output directory with timestamp
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-    output_dir = os.path.join(output_dir, f"instruction_lora_{timestamp}")
-    os.makedirs(output_dir, exist_ok=True)
+    # Create unique output directory with numeric run index
+    output_dir = create_numbered_output_dir(output_dir, "instruction_lora")
 
     print(f"LoRA fine-tuning output directory: {output_dir}")
     print(f"Training configuration: {config.to_dict()}")
@@ -127,7 +125,9 @@ def train_instruction_model_lora(
         train_split=0.9,
         shuffle=True,
         num_workers=0,
-        mode="instruction"
+        mode="instruction",
+        split_strategy="group_by_expression",
+        split_seed=42,
     )
     print(f"Training batches: {len(train_dataloader)}")
     print(f"Validation batches: {len(val_dataloader)}")
@@ -183,6 +183,7 @@ def train_instruction_model_lora(
     global_step = 0
     best_val_loss = float('inf')
     training_log = []
+    training_step_log = []
 
     for epoch in range(config.num_epochs):
         print(f"\n{'='*60}")
@@ -199,7 +200,8 @@ def train_instruction_model_lora(
             epoch=epoch + 1,
             global_step=global_step,
             output_dir=output_dir,
-            tokenizer_vocab_size=vocab_size
+            tokenizer_vocab_size=vocab_size,
+            step_log=training_step_log,
         )
 
         # Evaluate on validation set
@@ -281,6 +283,11 @@ def train_instruction_model_lora(
     with open(log_path, 'w') as f:
         json.dump(training_log, f, indent=2)
     print(f"Training log saved: {log_path}")
+
+    step_log_path = os.path.join(output_dir, 'training_step_log.json')
+    with open(step_log_path, 'w') as f:
+        json.dump(training_step_log, f, indent=2)
+    print(f"Training step log saved: {step_log_path}")
 
     # Save summary
     summary = {

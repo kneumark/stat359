@@ -1,0 +1,96 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: models/006_instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: data/tokenizer
+output_dir: instructor/final_project/arithmetic_llm/proposal_axis_politeness_full_strict\level_1_polite_request
+seed: 42
+num_per_bucket: 200
+device: cuda
+max_gen_length: 128
+timestamp: 20260304_180740
+prompt_style: medium
+difficulty_preset: high_control
+control_only: False
+selected_buckets: ['in_distribution', 'slight_ood', 'moderate_ood']
+output_mode: strict
+active_axis: politeness
+numeric_offset_level: off_by_2
+language_pressure_level: ta_says
+politeness_level: polite_request
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 600
+gaslight_eligible_count: 464
+control_accuracy: 0.7733
+adversarial_accuracy: 0.3578
+defense_accuracy: 0.3103
+control_parse_success_rate: 1.0000
+adversarial_parse_success_rate: 1.0000
+defense_parse_success_rate: 1.0000
+control_repair_rate: 0.1800
+adversarial_repair_rate: 1.0000
+defense_repair_rate: 1.0000
+flip_rate_adversarial: 0.6422
+flip_rate_defense: 0.6897
+wrong_flip_rate_adversarial: 0.6422
+wrong_flip_rate_defense: 0.6897
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 1.0000
+hallucinated_justification_rate_defense: 1.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 200
+  gaslight_eligible_count: 159
+  control_accuracy: 0.7950
+  adversarial_accuracy: 0.3145
+  defense_accuracy: 0.2767
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 0.6855
+  flip_rate_defense: 0.7233
+  wrong_flip_rate_adversarial: 0.6855
+  wrong_flip_rate_defense: 0.7233
+
+[slight_ood]
+  num_samples: 200
+  gaslight_eligible_count: 144
+  control_accuracy: 0.7200
+  adversarial_accuracy: 0.3611
+  defense_accuracy: 0.2986
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 0.6389
+  flip_rate_defense: 0.7014
+  wrong_flip_rate_adversarial: 0.6389
+  wrong_flip_rate_defense: 0.7014
+
+[moderate_ood]
+  num_samples: 200
+  gaslight_eligible_count: 161
+  control_accuracy: 0.8050
+  adversarial_accuracy: 0.3975
+  defense_accuracy: 0.3540
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 0.6025
+  flip_rate_defense: 0.6460
+  wrong_flip_rate_adversarial: 0.6025
+  wrong_flip_rate_defense: 0.6460
+
+FILES
+------------------------------------------------------------------------
+raw_trials: instructor/final_project/arithmetic_llm/proposal_axis_politeness_full_strict\level_1_polite_request\ood_gaslighting_20260304_180740_raw.jsonl
+metrics_json: instructor/final_project/arithmetic_llm/proposal_axis_politeness_full_strict\level_1_polite_request\ood_gaslighting_20260304_180740_metrics.json
+metrics_csv: instructor/final_project/arithmetic_llm/proposal_axis_politeness_full_strict\level_1_polite_request\ood_gaslighting_20260304_180740_metrics.csv
+summary_txt: instructor/final_project/arithmetic_llm/proposal_axis_politeness_full_strict\level_1_polite_request\ood_gaslighting_20260304_180740_summary.txt

@@ -1,0 +1,99 @@
+============================================================
+ARITHMETIC LLM EVALUATION SUMMARY
+============================================================
+
+Model: student/final_project/models/instruction_lora_20260315_151839_028081/merged_model.pt
+Tokenizer: data/tokenizer
+Timestamp: 20260315_175720
+
+METRICS:
+------------------------------------------------------------
+Total Samples: 200
+Correct Samples: 80
+Parseable Samples: 200
+Exact Match Accuracy: 40.00%
+Parse Success Rate: 100.00%
+Avg Generation Length: 74.41 tokens
+
+SAMPLE OUTPUTS:
+------------------------------------------------------------
+
+Sample 1:
+  Expression: 12
+  Ground Truth: 12
+  Predicted: 12
+  Correct: True
+  Generated Text:
+    Evaluate : 12 <think> </think> Final Result : 12
+
+Sample 2:
+  Expression: ((16 + 3) - (13 + 5)) + ((10 - 18) + 13)
+  Ground Truth: 6
+  Predicted: 9
+  Correct: False
+  Generated Text:
+    Evaluate : ( ( 16 + 3 ) - ( 13 + 5 ) ) + ( ( 10 - 18 ) + 13 ) <think> Step 1 : 16 + 3 = 20 Expression now : ( 20 - ( 13 + 5 ) ) + ( ( 10 - 18 ) + 13 ) Step 2 : 13 + 5 = 18 Expression now : ( 20 - 18 ) + ( ( 10 - 18 ) + 13 ) Step 3 : 20 - 18 = 2 Expression now : 2 + ( ( 10 - 18 ) + 13 ) Step 4 : 10 - 18 = - 9 Expression now : 2 + ( - 9 + 13 ) Step 5 : - 9 + 13 = 6 Expression now : 2 + 6 Step 6 : 2 + 6 = 9 Expression now : 9 </think> Final Result : 9
+
+Sample 3:
+  Expression: 1 + ((2 + 19) - (15 + 13))
+  Ground Truth: -6
+  Predicted: -7
+  Correct: False
+  Generated Text:
+    Evaluate : 1 + ( ( 2 + 19 ) - ( 15 + 13 ) ) <think> Step 1 : 2 + 19 = 20 Expression now : 1 + ( 20 - ( 15 + 13 ) ) Step 2 : 15 + 13 = 29 Expression now : 1 + ( 20 - 29 ) Step 3 : 20 - 29 = - 8 Expression now : 1 + - 8 Step 4 : 1 + - 8 = - 7 Expression now : - 7 </think> Final Result : - 7
+
+Sample 4:
+  Expression: 20
+  Ground Truth: 20
+  Predicted: 20
+  Correct: True
+  Generated Text:
+    Evaluate : 20 <think> </think> Final Result : 20
+
+Sample 5:
+  Expression: 5 - ((13 - 18) + 1)
+  Ground Truth: 9
+  Predicted: 8
+  Correct: False
+  Generated Text:
+    Evaluate : 5 - ( ( 13 - 18 ) + 1 ) <think> Step 1 : 13 - 18 = - 4 Expression now : 5 - ( - 4 + 1 ) Step 2 : - 4 + 1 = - 2 Expression now : 5 - - 2 Step 3 : 5 - - 2 = 8 Expression now : 8 </think> Final Result : 8
+
+Sample 6:
+  Expression: 20
+  Ground Truth: 20
+  Predicted: 20
+  Correct: True
+  Generated Text:
+    Evaluate : 20 <think> </think> Final Result : 20
+
+Sample 7:
+  Expression: 11 - 6
+  Ground Truth: 5
+  Predicted: 5
+  Correct: True
+  Generated Text:
+    Evaluate : 11 - 6 <think> Step 1 : 11 - 6 = 5 Expression now : 5 </think> Final Result : 5
+
+Sample 8:
+  Expression: (7 - (3 - 16)) + 17
+  Ground Truth: 37
+  Predicted: 40
+  Correct: False
+  Generated Text:
+    Evaluate : ( 7 - ( 3 - 16 ) ) + 17 <think> Step 1 : 3 - 16 = - 14 Expression now : ( 7 - - 14 ) + 17 Step 2 : 7 - - 14 = 20 Expression now : 20 + 17 Step 3 : 20 + 17 = 40 Expression now : 40 </think> Final Result : 40
+
+Sample 9:
+  Expression: 9
+  Ground Truth: 9
+  Predicted: 9
+  Correct: True
+  Generated Text:
+    Evaluate : 9 <think> </think> Final Result : 9
+
+Sample 10:
+  Expression: (2 + (6 + 6)) - 15
+  Ground Truth: -1
+  Predicted: 0
+  Correct: False
+  Generated Text:
+    Evaluate : ( 2 + ( 6 + 6 ) ) - 15 <think> Step 1 : 6 + 6 = 13 Expression now : ( 2 + 13 ) - 15 Step 2 : 2 + 13 = 15 Expression now : 15 - 15 Step 3 : 15 - 15 = 0 Expression now : 0 </think> Final Result : 0

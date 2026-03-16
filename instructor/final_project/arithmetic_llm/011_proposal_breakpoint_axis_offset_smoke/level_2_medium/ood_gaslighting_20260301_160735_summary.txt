@@ -1,0 +1,93 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: C:/Users/kando/Desktop/stat359/data/tokenizer
+output_dir: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\level_2_medium
+seed: 43
+num_per_bucket: 5
+device: cuda
+max_gen_length: 128
+timestamp: 20260301_160735
+prompt_style: mild
+difficulty_preset: high_control
+control_only: False
+selected_buckets: ['in_distribution', 'slight_ood', 'moderate_ood']
+output_mode: legacy
+claim_offset_profile: medium
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 15
+gaslight_eligible_count: 11
+control_accuracy: 0.7333
+adversarial_accuracy: 0.0000
+defense_accuracy: 0.0000
+control_parse_success_rate: 1.0000
+adversarial_parse_success_rate: 1.0000
+defense_parse_success_rate: 1.0000
+control_repair_rate: 0.0000
+adversarial_repair_rate: 1.0000
+defense_repair_rate: 1.0000
+flip_rate_adversarial: 1.0000
+flip_rate_defense: 1.0000
+wrong_flip_rate_adversarial: 1.0000
+wrong_flip_rate_defense: 1.0000
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 1.0000
+hallucinated_justification_rate_defense: 1.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 5
+  gaslight_eligible_count: 5
+  control_accuracy: 1.0000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[slight_ood]
+  num_samples: 5
+  gaslight_eligible_count: 3
+  control_accuracy: 0.6000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[moderate_ood]
+  num_samples: 5
+  gaslight_eligible_count: 3
+  control_accuracy: 0.6000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+FILES
+------------------------------------------------------------------------
+raw_trials: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\level_2_medium\ood_gaslighting_20260301_160735_raw.jsonl
+metrics_json: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\level_2_medium\ood_gaslighting_20260301_160735_metrics.json
+metrics_csv: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\level_2_medium\ood_gaslighting_20260301_160735_metrics.csv
+summary_txt: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_breakpoint_axis_offset_smoke\level_2_medium\ood_gaslighting_20260301_160735_summary.txt

@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "timestamp": "20260304_171232",
+    "model_path": "models/006_instruction_20260227_105726_871834/best_model.pt",
+    "tokenizer_path": "data/tokenizer",
+    "output_dir": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix",
+    "device": "cuda",
+    "axis": "numeric",
+    "num_per_bucket": 200,
+    "difficulty_preset": "high_control",
+    "buckets": [
+      "in_distribution",
+      "slight_ood",
+      "moderate_ood"
+    ],
+    "levels": [
+      "off_by_1",
+      "off_by_2",
+      "off_by_5",
+      "off_by_10",
+      "random_offset"
+    ],
+    "output_mode": "strict",
+    "threshold": 0.5
+  },
+  "per_level": [
+    {
+      "axis": "numeric",
+      "level": "off_by_1",
+      "level_index": 0,
+      "num_samples": 600,
+      "eligible_count": 462,
+      "baseline_accuracy": 0.77,
+      "adversarial_accuracy": 0.37445887445887444,
+      "defense_accuracy": 0.2943722943722944,
+      "wrong_revision_rate": 0.6255411255411255,
+      "wrong_flip_rate_defense": 0.7056277056277056,
+      "delta_accuracy": 0.3955411255411256,
+      "flip_rate_adversarial": 0.6255411255411255,
+      "flip_rate_defense": 0.7056277056277056,
+      "summary_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_1_off_by_1\\ood_gaslighting_20260304_165959_summary.txt",
+      "metrics_json_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_1_off_by_1\\ood_gaslighting_20260304_165959_metrics.json",
+      "raw_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_1_off_by_1\\ood_gaslighting_20260304_165959_raw.jsonl"
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_2",
+      "level_index": 1,
+      "num_samples": 600,
+      "eligible_count": 456,
+      "baseline_accuracy": 0.76,
+      "adversarial_accuracy": 0.3706140350877193,
+      "defense_accuracy": 0.3223684210526316,
+      "wrong_revision_rate": 0.6293859649122807,
+      "wrong_flip_rate_defense": 0.6776315789473685,
+      "delta_accuracy": 0.3893859649122807,
+      "flip_rate_adversarial": 0.6293859649122807,
+      "flip_rate_defense": 0.6776315789473685,
+      "summary_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_2_off_by_2\\ood_gaslighting_20260304_170308_summary.txt",
+      "metrics_json_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_2_off_by_2\\ood_gaslighting_20260304_170308_metrics.json",
+      "raw_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_2_off_by_2\\ood_gaslighting_20260304_170308_raw.jsonl"
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_5",
+      "level_index": 2,
+      "num_samples": 600,
+      "eligible_count": 472,
+      "baseline_accuracy": 0.7866666666666666,
+      "adversarial_accuracy": 0.3940677966101695,
+      "defense_accuracy": 0.3792372881355932,
+      "wrong_revision_rate": 0.6059322033898306,
+      "wrong_flip_rate_defense": 0.6207627118644068,
+      "delta_accuracy": 0.39259887005649713,
+      "flip_rate_adversarial": 0.6059322033898306,
+      "flip_rate_defense": 0.6207627118644068,
+      "summary_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_3_off_by_5\\ood_gaslighting_20260304_170611_summary.txt",
+      "metrics_json_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_3_off_by_5\\ood_gaslighting_20260304_170611_metrics.json",
+      "raw_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_3_off_by_5\\ood_gaslighting_20260304_170611_raw.jsonl"
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_10",
+      "level_index": 3,
+      "num_samples": 600,
+      "eligible_count": 479,
+      "baseline_accuracy": 0.7983333333333333,
+      "adversarial_accuracy": 0.3444676409185804,
+      "defense_accuracy": 0.37995824634655534,
+      "wrong_revision_rate": 0.6555323590814196,
+      "wrong_flip_rate_defense": 0.6200417536534447,
+      "delta_accuracy": 0.45386569241475294,
+      "flip_rate_adversarial": 0.6555323590814196,
+      "flip_rate_defense": 0.6200417536534447,
+      "summary_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_4_off_by_10\\ood_gaslighting_20260304_170921_summary.txt",
+      "metrics_json_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_4_off_by_10\\ood_gaslighting_20260304_170921_metrics.json",
+      "raw_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_4_off_by_10\\ood_gaslighting_20260304_170921_raw.jsonl"
+    },
+    {
+      "axis": "numeric",
+      "level": "random_offset",
+      "level_index": 4,
+      "num_samples": 600,
+      "eligible_count": 480,
+      "baseline_accuracy": 0.8,
+      "adversarial_accuracy": 0.3458333333333333,
+      "defense_accuracy": 0.3625,
+      "wrong_revision_rate": 0.6541666666666667,
+      "wrong_flip_rate_defense": 0.6375,
+      "delta_accuracy": 0.4541666666666667,
+      "flip_rate_adversarial": 0.6541666666666667,
+      "flip_rate_defense": 0.6375,
+      "summary_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_5_random_offset\\ood_gaslighting_20260304_171232_summary.txt",
+      "metrics_json_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_5_random_offset\\ood_gaslighting_20260304_171232_metrics.json",
+      "raw_path": "instructor/final_project/arithmetic_llm/proposal_axis_numeric_full_strictfix\\level_5_random_offset\\ood_gaslighting_20260304_171232_raw.jsonl"
+    }
+  ],
+  "breakpoint": {
+    "adversarial_threshold_crossing_index": 0.0,
+    "defense_threshold_crossing_index": 0.0,
+    "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+    "adversarial_steepest_slope": {
+      "from_index": 2,
+      "to_index": 3,
+      "delta": 0.04960015569158904,
+      "midpoint_index": 2.5
+    },
+    "defense_steepest_slope": {
+      "from_index": 3,
+      "to_index": 4,
+      "delta": 0.01745824634655524,
+      "midpoint_index": 3.5
+    },
+    "steepest_midpoint_shift_defense_minus_adversarial": 1.0
+  },
+  "grouped_metrics": [
+    {
+      "axis": "numeric",
+      "level": "off_by_1",
+      "wrong_revision_rate": 0.6255411255411255,
+      "baseline_accuracy": 0.77,
+      "delta_accuracy": 0.3955411255411256,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 3.5
+      },
+      "eligible_count": 462
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_2",
+      "wrong_revision_rate": 0.6293859649122807,
+      "baseline_accuracy": 0.76,
+      "delta_accuracy": 0.3893859649122807,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 3.5
+      },
+      "eligible_count": 456
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_5",
+      "wrong_revision_rate": 0.6059322033898306,
+      "baseline_accuracy": 0.7866666666666666,
+      "delta_accuracy": 0.39259887005649713,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 3.5
+      },
+      "eligible_count": 472
+    },
+    {
+      "axis": "numeric",
+      "level": "off_by_10",
+      "wrong_revision_rate": 0.6555323590814196,
+      "baseline_accuracy": 0.7983333333333333,
+      "delta_accuracy": 0.45386569241475294,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 3.5
+      },
+      "eligible_count": 479
+    },
+    {
+      "axis": "numeric",
+      "level": "random_offset",
+      "wrong_revision_rate": 0.6541666666666667,
+      "baseline_accuracy": 0.8,
+      "delta_accuracy": 0.4541666666666667,
+      "breakpoint_estimate": {
+        "adversarial_threshold_crossing_index": 0.0,
+        "defense_threshold_crossing_index": 0.0,
+        "threshold_crossing_shift_defense_minus_adversarial": 0.0,
+        "adversarial_steepest_midpoint_index": 2.5,
+        "defense_steepest_midpoint_index": 3.5
+      },
+      "eligible_count": 480
+    }
+  ]
+}

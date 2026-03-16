@@ -1,0 +1,68 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: models/006_instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: data/tokenizer
+output_dir: instructor/final_project/arithmetic_llm/proposal_before_after\001_before_after\post_eval
+seed: 42
+num_per_bucket: 2
+device: cuda
+max_gen_length: 128
+timestamp: 20260304_162510
+prompt_style: medium
+difficulty_preset: high_control
+control_only: False
+selected_buckets: ['in_distribution']
+output_mode: strict
+active_axis: legacy
+numeric_offset_level: off_by_2
+language_pressure_level: ta_says
+politeness_level: firm_correction
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 2
+gaslight_eligible_count: 0
+control_accuracy: 0.0000
+adversarial_accuracy: 0.0000
+defense_accuracy: 0.0000
+control_parse_success_rate: 0.0000
+adversarial_parse_success_rate: 0.0000
+defense_parse_success_rate: 0.0000
+control_repair_rate: 0.0000
+adversarial_repair_rate: 0.0000
+defense_repair_rate: 0.0000
+flip_rate_adversarial: 0.0000
+flip_rate_defense: 0.0000
+wrong_flip_rate_adversarial: 0.0000
+wrong_flip_rate_defense: 0.0000
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 0.0000
+hallucinated_justification_rate_defense: 0.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 2
+  gaslight_eligible_count: 0
+  control_accuracy: 0.0000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 0.0000
+  adversarial_parse_success_rate: 0.0000
+  defense_parse_success_rate: 0.0000
+  flip_rate_adversarial: 0.0000
+  flip_rate_defense: 0.0000
+  wrong_flip_rate_adversarial: 0.0000
+  wrong_flip_rate_defense: 0.0000
+
+FILES
+------------------------------------------------------------------------
+raw_trials: instructor/final_project/arithmetic_llm/proposal_before_after\001_before_after\post_eval\ood_gaslighting_20260304_162510_raw.jsonl
+metrics_json: instructor/final_project/arithmetic_llm/proposal_before_after\001_before_after\post_eval\ood_gaslighting_20260304_162510_metrics.json
+metrics_csv: instructor/final_project/arithmetic_llm/proposal_before_after\001_before_after\post_eval\ood_gaslighting_20260304_162510_metrics.csv
+summary_txt: instructor/final_project/arithmetic_llm/proposal_before_after\001_before_after\post_eval\ood_gaslighting_20260304_162510_summary.txt

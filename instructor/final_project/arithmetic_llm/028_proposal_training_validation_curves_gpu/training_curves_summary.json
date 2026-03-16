@@ -1,0 +1,13 @@
+{
+  "training_log": "final_project/arithmetic_llm/proposal_training_curves/004_instruction/training_log.json",
+  "training_step_log": "final_project/arithmetic_llm/proposal_training_curves/004_instruction/training_step_log.json",
+  "x_axis": "epoch",
+  "num_epochs": 4,
+  "num_train_points": 4500,
+  "num_val_points": 4,
+  "plots": {
+    "loss": "final_project/arithmetic_llm/028_proposal_training_validation_curves_gpu\\training_validation_loss_curve.png",
+    "perplexity": "final_project/arithmetic_llm/028_proposal_training_validation_curves_gpu\\training_validation_perplexity_curve.png",
+    "learning_rate": "final_project/arithmetic_llm/028_proposal_training_validation_curves_gpu\\learning_rate_curve.png"
+  }
+}

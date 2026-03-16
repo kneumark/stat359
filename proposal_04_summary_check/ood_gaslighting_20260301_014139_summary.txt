@@ -1,0 +1,89 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: models/instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: data/tokenizer
+output_dir: proposal_summary_check
+seed: 42
+num_per_bucket: 5
+device: cuda
+max_gen_length: 192
+timestamp: 20260301_014139
+prompt_style: medium
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 25
+control_accuracy: 0.2400
+adversarial_accuracy: 0.0000
+defense_accuracy: 0.0000
+flip_rate_adversarial: 0.8800
+flip_rate_defense: 0.8800
+wrong_flip_rate_adversarial: 1.0000
+wrong_flip_rate_defense: 1.0000
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 1.0000
+hallucinated_justification_rate_defense: 1.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 5
+  control_accuracy: 0.4000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[slight_ood]
+  num_samples: 5
+  control_accuracy: 0.4000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[moderate_ood]
+  num_samples: 5
+  control_accuracy: 0.2000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  flip_rate_adversarial: 0.6000
+  flip_rate_defense: 0.6000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[strong_ood]
+  num_samples: 5
+  control_accuracy: 0.2000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[very_strong_ood]
+  num_samples: 5
+  control_accuracy: 0.0000
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  flip_rate_adversarial: 0.8000
+  flip_rate_defense: 0.8000
+  wrong_flip_rate_adversarial: 0.0000
+  wrong_flip_rate_defense: 0.0000
+
+FILES
+------------------------------------------------------------------------
+raw_trials: proposal_summary_check\ood_gaslighting_20260301_014139_raw.jsonl
+metrics_json: proposal_summary_check\ood_gaslighting_20260301_014139_metrics.json
+metrics_csv: proposal_summary_check\ood_gaslighting_20260301_014139_metrics.csv
+summary_txt: proposal_summary_check\ood_gaslighting_20260301_014139_summary.txt

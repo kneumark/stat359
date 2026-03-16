@@ -1,0 +1,57 @@
+{
+  "timestamp": "20260315_143157",
+  "baseline_csv": "student/final_project/adversarial_results/baseline_table_20260306_180705.csv",
+  "model_path": "student/final_project/models/instruction_lora_20260313_190457_659634/merged_model.pt",
+  "num_baseline_correct": 50,
+  "num_perturbed_samples": 250,
+  "perturbation_levels": [
+    "off_by_1",
+    "off_by_2",
+    "off_by_5",
+    "off_by_10",
+    "random_offset"
+  ],
+  "stats_by_level": {
+    "off_by_1": {
+      "total": 50,
+      "flipped": 24,
+      "still_correct": 1,
+      "flip_rate": 48.0,
+      "maintained_rate": 2.0,
+      "parse_rate": 50.0
+    },
+    "off_by_2": {
+      "total": 50,
+      "flipped": 23,
+      "still_correct": 0,
+      "flip_rate": 46.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 46.0
+    },
+    "off_by_5": {
+      "total": 50,
+      "flipped": 23,
+      "still_correct": 0,
+      "flip_rate": 46.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 46.0
+    },
+    "off_by_10": {
+      "total": 50,
+      "flipped": 28,
+      "still_correct": 0,
+      "flip_rate": 56.00000000000001,
+      "maintained_rate": 0.0,
+      "parse_rate": 56.00000000000001
+    },
+    "random_offset": {
+      "total": 50,
+      "flipped": 25,
+      "still_correct": 0,
+      "flip_rate": 50.0,
+      "maintained_rate": 0.0,
+      "parse_rate": 50.0
+    }
+  },
+  "seed": 42
+}

@@ -153,6 +153,17 @@ poetry run python -m instructor.final_project.arithmetic_llm.run_instruction_tra
   --foundational-checkpoint models/foundational_YYYYMMDD_HHMMSS/best_model.pt \
   --num-epochs 10
 
+# Optional: enable Weights & Biases logging during training
+poetry run python -m instructor.final_project.arithmetic_llm.run_instruction_training \
+  --instruction-corpus-path data/instruction_corpus.txt \
+  --output-dir models/ \
+  --tokenizer-path data/tokenizer \
+  --foundational-checkpoint models/foundational_YYYYMMDD_HHMMSS/best_model.pt \
+  --num-epochs 10 \
+  --use-wandb \
+  --wandb-project stat359-arithmetic-llm \
+  --wandb-run-name instruction-ft-run
+
 # 4.1 Evaluate the model
 poetry run python -m instructor.final_project.arithmetic_llm.run_evaluation \
   --model-path models/instruction_YYYYMMDD_HHMMSS/best_model.pt \
@@ -206,6 +217,22 @@ poetry run python -m instructor.final_project.arithmetic_llm.run_evaluation \
   --max-gen-length 512 \
   --batch-size 1 \
   --num-samples 1000
+
+# 7. Before/after robustness template (baseline -> finetune -> post evaluation)
+poetry run python -m instructor.final_project.arithmetic_llm.run_before_after_robustness \
+  --baseline-model-path models/instruction_YYYYMMDD_HHMMSS/best_model.pt \
+  --tokenizer-path data/tokenizer \
+  --instruction-corpus-path data/instruction_corpus.txt \
+  --output-dir proposal_before_after \
+  --num-per-bucket 200 \
+  --difficulty-preset high_control \
+  --buckets in_distribution,slight_ood,moderate_ood \
+  --use-wandb \
+  --wandb-project stat359-arithmetic-llm
+
+# 8. Organize existing output folders with numeric prefixes (one-time cleanup)
+poetry run python -m instructor.final_project.arithmetic_llm.organize_output_folders \
+  --root-dir instructor/final_project/arithmetic_llm
 
 ```
 

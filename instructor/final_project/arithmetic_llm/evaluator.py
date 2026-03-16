@@ -370,7 +370,7 @@ class ModelEvaluator:
         
         Args:
             prompt: Input prompt text
-            max_length: Maximum generation length
+            max_length: Maximum number of newly generated tokens
             
         Returns:
             Generated text
@@ -382,21 +382,32 @@ class ModelEvaluator:
         if eos_token_id is not None and input_ids and input_ids[-1] == eos_token_id:
             input_ids = input_ids[:-1]
         
+        model_max_seq = getattr(self.model, "max_seq_length", None)
+        if model_max_seq is not None and max_length > 0 and len(input_ids) >= model_max_seq:
+            keep_tokens = max(1, model_max_seq - max_length)
+            input_ids = input_ids[-keep_tokens:]
+
         input_tensor = torch.tensor([input_ids], dtype=torch.long).to(self.device)
         
-        # Generate
+        # Generate (treat max_length as max new tokens)
+        target_max_length = min(
+            getattr(self.model, "max_seq_length", len(input_ids) + max_length),
+            len(input_ids) + max_length,
+        )
         with torch.no_grad():
             generated_ids = self.model.generate(
                 input_tensor,
-                max_length=max_length,
+                max_length=target_max_length,
                 temperature=0.8,
                 top_k=50,
                 top_p=0.9,
                 eos_token_id=eos_token_id
             )
         
-        # Decode (skip special tokens for cleaner output)
-        generated_text = self.tokenizer.decode(generated_ids[0].tolist(), skip_special_tokens=True)
+        # Decode only newly generated continuation (exclude prompt tokens)
+        full_ids = generated_ids[0].tolist()
+        continuation_ids = full_ids[len(input_ids):] if len(full_ids) > len(input_ids) else []
+        generated_text = self.tokenizer.decode(continuation_ids, skip_special_tokens=True).strip()
         
         return generated_text
     
@@ -405,7 +416,7 @@ class ModelEvaluator:
         
         Args:
             prompts: List of input prompt texts
-            max_length: Maximum generation length
+            max_length: Maximum number of newly generated tokens
             
         Returns:
             List of generated texts
@@ -419,6 +430,11 @@ class ModelEvaluator:
             # Remove EOS token if present (we want to continue generating)
             if eos_token_id is not None and input_ids and input_ids[-1] == eos_token_id:
                 input_ids = input_ids[:-1]
+
+            model_max_seq = getattr(self.model, "max_seq_length", None)
+            if model_max_seq is not None and max_length > 0 and len(input_ids) >= model_max_seq:
+                keep_tokens = max(1, model_max_seq - max_length)
+                input_ids = input_ids[-keep_tokens:]
             batch_input_ids.append(input_ids)
         
         # Left-pad sequences so last token aligns across batch
@@ -438,11 +454,15 @@ class ModelEvaluator:
         input_tensor = torch.tensor(padded_input_ids, dtype=torch.long).to(self.device)
         attention_mask = torch.tensor(attention_masks, dtype=torch.float).to(self.device)
         
-        # Generate for batch
+        # Generate for batch (treat max_length as max new tokens)
+        target_max_length = min(
+            getattr(self.model, "max_seq_length", max_input_len + max_length),
+            max_input_len + max_length,
+        )
         with torch.no_grad():
             generated_ids = self.model.generate(
                 input_tensor,
-                max_length=max_length,
+                max_length=target_max_length,
                 temperature=0.8,
                 top_k=50,
                 top_p=0.9,
@@ -450,10 +470,13 @@ class ModelEvaluator:
                 attention_mask=attention_mask
             )
         
-        # Decode all outputs (skip special tokens for cleaner output)
+        # Decode only newly generated continuations (exclude prompt tokens)
         generated_texts = []
-        for ids in generated_ids:
-            text = self.tokenizer.decode(ids.tolist(), skip_special_tokens=True)
+        for idx, ids in enumerate(generated_ids):
+            full_ids = ids.tolist()
+            input_len = len(batch_input_ids[idx])
+            continuation_ids = full_ids[input_len:] if len(full_ids) > input_len else []
+            text = self.tokenizer.decode(continuation_ids, skip_special_tokens=True).strip()
             generated_texts.append(text)
         
         return generated_texts
@@ -487,7 +510,7 @@ class ModelEvaluator:
         self,
         expression: str,
         generated_text: str
-    ) -> bool:
+    ) -> Optional[bool]:
         """Verify that reasoning steps are mathematically correct.
         
         Args:
@@ -495,23 +518,29 @@ class ModelEvaluator:
             generated_text: Generated solution text
             
         Returns:
-            True if all reasoning steps are correct, False otherwise
+            True if all parsed reasoning steps are correct,
+            False if any parsed step is incorrect,
+            None if no verifiable arithmetic steps are present
         """
-        # Extract all step patterns: "Step N: A op B = C"
-        step_pattern = r'Step \d+:\s*(-?\d+)\s*([+\-])\s*(-?\d+)\s*=\s*(-?\d+)'
+        # Extract arithmetic identities such as:
+        # "Step 2: 4 + 5 = 9" or "4.5 - 1.2 = 3.3"
+        step_pattern = (
+            r'(?:Step\s*\d+\s*:\s*)?'
+            r'([+-]?\d+(?:\.\d+)?)\s*([+\-])\s*'
+            r'([+-]?\d+(?:\.\d+)?)\s*=\s*([+-]?\d+(?:\.\d+)?)'
+        )
         steps = re.findall(step_pattern, generated_text)
         
         if not steps:
-            # No steps found
-            return False
+            return None
         
         # Verify each step
         for step in steps:
             left, op, right, result = step
             try:
-                left_val = int(left)
-                right_val = int(right)
-                result_val = int(result)
+                left_val = float(left)
+                right_val = float(right)
+                result_val = float(result)
                 
                 # Compute expected result
                 if op == '+':
@@ -522,7 +551,7 @@ class ModelEvaluator:
                     return False
                 
                 # Check if step is correct
-                if expected != result_val:
+                if abs(expected - result_val) > 1e-9:
                     return False
             except ValueError:
                 return False

@@ -1,0 +1,22 @@
+========================================================================
+BREAKPOINT SWEEP SUMMARY
+========================================================================
+
+Axis: language
+Levels (in order): very_mild, medium, strong
+Fixed prompt style: mild
+Fixed offset profile: tiny
+Threshold: 0.5
+
+Per-level wrong revision rates
+- very_mild: adv=1.0000, def=0.8333, eligible=12
+- medium: adv=1.0000, def=1.0000, eligible=14
+- strong: adv=1.0000, def=1.0000, eligible=12
+
+Estimated breakpoints
+- adversarial threshold crossing index: 0.0
+- defense threshold crossing index: 0.0
+- threshold crossing shift (defense - adversarial): 0.0
+- adversarial steepest slope: {'from_index': 0, 'to_index': 1, 'delta': 0.0, 'midpoint_index': 0.5}
+- defense steepest slope: {'from_index': 0, 'to_index': 1, 'delta': 0.16666666666666663, 'midpoint_index': 0.5}
+- steepest midpoint shift (defense - adversarial): 0.0

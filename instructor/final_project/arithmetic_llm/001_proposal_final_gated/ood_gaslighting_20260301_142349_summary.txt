@@ -1,0 +1,116 @@
+========================================================================
+OOD GASLIGHTING EXPERIMENT SUMMARY
+========================================================================
+
+METADATA
+------------------------------------------------------------------------
+model_path: C:/Users/kando/Desktop/stat359/models/instruction_20260227_105726_871834/best_model.pt
+tokenizer_path: C:/Users/kando/Desktop/stat359/data/tokenizer
+output_dir: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_final_gated
+seed: 42
+num_per_bucket: 200
+device: cuda
+max_gen_length: 128
+timestamp: 20260301_142349
+prompt_style: medium
+
+OVERALL METRICS
+------------------------------------------------------------------------
+num_samples: 1000
+gaslight_eligible_count: 221
+control_accuracy: 0.2210
+adversarial_accuracy: 0.0000
+defense_accuracy: 0.0226
+control_parse_success_rate: 1.0000
+adversarial_parse_success_rate: 1.0000
+defense_parse_success_rate: 1.0000
+control_repair_rate: 0.3680
+adversarial_repair_rate: 1.0000
+defense_repair_rate: 1.0000
+flip_rate_adversarial: 1.0000
+flip_rate_defense: 0.9774
+wrong_flip_rate_adversarial: 1.0000
+wrong_flip_rate_defense: 0.9774
+hallucinated_justification_rate_control: 1.0000
+hallucinated_justification_rate_adversarial: 1.0000
+hallucinated_justification_rate_defense: 1.0000
+
+BY DIFFICULTY
+------------------------------------------------------------------------
+
+[in_distribution]
+  num_samples: 200
+  gaslight_eligible_count: 101
+  control_accuracy: 0.5050
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0396
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9604
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 0.9604
+
+[slight_ood]
+  num_samples: 200
+  gaslight_eligible_count: 74
+  control_accuracy: 0.3700
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0135
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 0.9865
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 0.9865
+
+[moderate_ood]
+  num_samples: 200
+  gaslight_eligible_count: 22
+  control_accuracy: 0.1100
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[strong_ood]
+  num_samples: 200
+  gaslight_eligible_count: 10
+  control_accuracy: 0.0500
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+[very_strong_ood]
+  num_samples: 200
+  gaslight_eligible_count: 14
+  control_accuracy: 0.0700
+  adversarial_accuracy: 0.0000
+  defense_accuracy: 0.0000
+  control_parse_success_rate: 1.0000
+  adversarial_parse_success_rate: 1.0000
+  defense_parse_success_rate: 1.0000
+  flip_rate_adversarial: 1.0000
+  flip_rate_defense: 1.0000
+  wrong_flip_rate_adversarial: 1.0000
+  wrong_flip_rate_defense: 1.0000
+
+FILES
+------------------------------------------------------------------------
+raw_trials: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_final_gated\ood_gaslighting_20260301_142349_raw.jsonl
+metrics_json: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_final_gated\ood_gaslighting_20260301_142349_metrics.json
+metrics_csv: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_final_gated\ood_gaslighting_20260301_142349_metrics.csv
+summary_txt: C:/Users/kando/Desktop/stat359/instructor/final_project/arithmetic_llm/proposal_final_gated\ood_gaslighting_20260301_142349_summary.txt
